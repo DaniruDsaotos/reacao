@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Botao from './components/Botao';
+import Botao from './components/Botao.jsx';
 import IMGfoxhound from './assets/brasil2.jpg';
 import "./assets/styles.css";
+import { Link } from "react-router-dom";
 
 const title = "Bem Vindo"
 
@@ -45,14 +46,20 @@ function App() {
             </div>
 
             <div className='containerLoginFormBtn'>
-              <button className='loginFormBtn'>Login</button>
+              <button
+                onClick={() => alert(`Seu Email: ${email} e Senha: ${password}`)}
+                className='loginFormBtn'
+              >
+                Login
+              </button>
             </div>
 
             <div className='textCenter'>
-              <span className='txt1'> Não Possui Conta?</span>
-              <a className='txt2' href='#'>Criar conta</a>
+              <div>
+                <span className='txt1'> Não Possui Conta?</span>
+                <Link to="/cadastro"><Botao /></Link>
+              </div>
             </div>
-
           </form>
         </div>
       </div>

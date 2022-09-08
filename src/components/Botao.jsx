@@ -1,23 +1,19 @@
-import React, { useState } from "react"
-import foto from "../imgReacao.png"
+import React from "react";
+import { useState } from "react";
+import Reacao from "../imgReacao.png";
 
-function Botao(props) {
-  const [clicado, setClicado] = useState(false)
-  const [cont, setCont] = useState(0)
-  const [rng,setRng] = useState("RNG")
-  
-  return (
-    <>
-      { 
-        clicado
-        ? <img src={foto} alt="" />
-        : <button onClick={() => setClicado(true)}>Jonas</button>
-      }
+function Botao() {
+    // const [sex, setSex] = useState(false)
+    let sex = false
 
-      <button onClick={() => setCont(cont + 1)}>contador:{cont}</button>
-      <button onClick={() => setRng(Math.random()*100)}>froggers {rng}</button>
-    </>
-  )
+    return(
+        <>
+            {
+                sex 
+                ? <img src={Reacao} alt="Reação"></img>
+                : <button onClick={() => sex = true}>Criar conta</button> 
+            }
+        </>
+    )
 }
-
 export default Botao
